@@ -1,22 +1,22 @@
 name: 'Slack notify on tag creation'
- on: 
-   push:
-     tags: '*'
-
- jobs:
-   slackNotification:
-     name: Slack Notification
-     runs-on: ubuntu-latest
-     steps:
-     - uses: actions/checkout@v2
-     - name: Slack Notification
-       uses: rtCamp/action-slack-notify@master
-       env:
-         SLACK_CHANNEL: alopatin_test
-         SLACK_COLOR: '#3278BD'
-         SLACK_ICON: 'https://github.githubassets.com/images/modules/logos_page/Octocat.png?size=48'
-         SLACK_USERNAME: GitHub
-         MSG_MINIMAL: True
-         SLACK_TITLE: ${{ github.repository }}
-         SLACK_MESSAGE: "New tag ${{ github.ref }} has been created."
-         SLACK_WEBHOOK: 'secrets.WEBHOOK'
+on:
+  push:
+    tags:
+    - '*'
+jobs:
+  slackNotification:
+    name: Slack Notification
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Slack Notification
+      uses: rtCamp/action-slack-notify@master
+      env:
+        SLACK_CHANNEL: alopatin_test
+        SLACK_COLOR: '#3278BD'
+        SLACK_ICON: 'https://github.githubassets.com/images/modules/logos_page/Octocat.png?size=48'
+        SLACK_USERNAME: GitHub
+        MSG_MINIMAL: True
+        SLACK_TITLE: ${{ github.repository }}
+        SLACK_MESSAGE: "New tag ${{ github.ref }} has been created."
+        SLACK_WEBHOOK: 'secrets.WEBHOOK'
