@@ -20,4 +20,4 @@ name: 'Slack notify on tag creation'
          MSG_MINIMAL: True
          SLACK_TITLE: ${{ github.repository }}
          SLACK_MESSAGE: "New tag ${{ github.ref }} has been created."
-         SLACK_WEBHOOK: 'https://hooks.slack.com/services/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'
+         SLACK_WEBHOOK: 'secrets.WEBHOOK'
