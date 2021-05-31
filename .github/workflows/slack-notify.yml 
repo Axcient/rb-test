@@ -1,8 +1,7 @@
 name: 'Slack notify on tag creation'
- on:
+ on: 
    push:
-     tags:
-       - '*'
+     tags: '*'
 
  jobs:
    slackNotification:
