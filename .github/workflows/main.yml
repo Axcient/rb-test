@@ -19,4 +19,4 @@ jobs:
         MSG_MINIMAL: True
         SLACK_TITLE: ${{ github.repository }}
         SLACK_MESSAGE: "New tag ${{ github.ref }} has been created."
-        SLACK_WEBHOOK: 'secrets.WEBHOOK'
+        SLACK_WEBHOOK: ${{ secrets.WEBHOOK }}
